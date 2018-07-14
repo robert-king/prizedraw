@@ -3,8 +3,9 @@ https://robert-king.github.io/prizedraw/
 
 #deploy:
 npm install -g angular-cli-ghpages
-ng build --prod --base-href "https://robert-king.github.io/prizedraw/"
-ngh
+ng build --prod --output-path prizedraw --base-href "https://robert-king.github.io/prizedraw/"
+sudo ngh --dir=dist/prizedraw
+Successfully published!
 
 
 # Prizedraw
