@@ -1,3 +1,12 @@
+#Hosted:
+https://robert-king.github.io/prizedraw/
+
+#deploy:
+npm install -g angular-cli-ghpages
+ng build --prod --base-href "https://robert-king.github.io/prizedraw/"
+ngh
+
+
 # Prizedraw
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
