@@ -1,3 +1,32 @@
+<div class="input-grid">
+  <div>
+    <label>Boost</label>
+    <input type="checkbox" [checked]="false" [(ngModel)]="boost">
+  </div>
+  <div>
+    <label>Skew entries left</label>
+    <input type="checkbox" [checked]="false" [(ngModel)]="stack">
+  </div>
+  <div>
+    <label>Entry Count</label>
+    <input type="number" [(ngModel)]="entryCount">
+  </div>
+  <div>
+    <label>Prize Count</label>
+    <input type="number" [(ngModel)]="prizeCount">
+  </div>
+  <div>
+    <label>Competition Days</label>
+    <input type="number" [(ngModel)]="days">
+  </div>
+</div>
+
 <div class="grid-container">
-  <app-prize-draw-sim></app-prize-draw-sim>
+  <app-prize-draw-sim
+  [boost]="boost"
+  [stack]="stack"
+  [entryCount]="entryCount"
+  [prizeCount]="prizeCount"
+  [days]="days">
+  </app-prize-draw-sim>
 </div>

@@ -6,3 +6,27 @@
   min-height: 100%;
   min-width: 100%;
 }
+
+.input-grid {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 900px;
+  margin: 1em auto 1em auto;
+}
+
+.input-grid div{
+  /*height: 1em;*/
+  background-color: lightblue;
+  /*min-width: 50%;*/
+  padding: 1em;
+  font-size: 1em;
+}
+
+
+.input-grid div input {
+  margin-left: 1em;
+  padding: 3px;
+  border-radius: 6px;
+  max-width: 5em;
+}

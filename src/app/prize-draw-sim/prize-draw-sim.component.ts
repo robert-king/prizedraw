@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {single} from './data';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {CompetitionService} from '../competition.service';
 
 @Component({
@@ -7,7 +6,13 @@ import {CompetitionService} from '../competition.service';
   templateUrl: './prize-draw-sim.component.html',
   styleUrls: ['./prize-draw-sim.component.css']
 })
-export class PrizeDrawSimComponent implements OnInit {
+export class PrizeDrawSimComponent implements OnInit, OnChanges {
+  @Input() boost: boolean;
+  @Input() stack: boolean;
+  @Input() entryCount: number;
+  @Input() prizeCount: number;
+  @Input() days: number;
+
   public multi = [];
 
   view: any[] = [700, 400];
@@ -18,9 +23,9 @@ export class PrizeDrawSimComponent implements OnInit {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Days';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Count';
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -37,7 +42,21 @@ export class PrizeDrawSimComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.multi = this.competitionService.runCompetition();
+    this.run();
+  }
+
+  ngOnChanges() {
+    this.run();
+  }
+
+  run() {
+    this.multi = this.competitionService.runCompetition(
+      this.boost,
+      this.stack,
+      this.entryCount,
+      this.prizeCount,
+      this.days
+    );
   }
 
 }
